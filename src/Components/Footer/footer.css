@@ -1,0 +1,321 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --WhiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  .videodiv {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    video {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: rgba(10, 84, 107, 0.307);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  .seccontent {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    padding: 2rem initial;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    z-index: 100;
+
+    .contactDiv {
+      justify-content: space-between;
+      gap: 1rem;
+      flex-direction: column;
+
+      .text {
+        small {
+          font-size: 13px;
+          font-weight: 400;
+          color: var(--whiteColor);
+        }
+
+        h2 {
+          color: var(--whiteColor);
+          font-size: 1.8rem;
+        }
+      }
+
+      .inputDiv {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+          width: 100%;
+          border-radius: 3rem;
+          padding: .5rem .6rem;
+          border: 1px solid var(--whiteColor);
+          outline: none;
+          background: transparent;
+          color: var(--whiteColor);
+
+          &::placeholder {
+            color: var(--whiteColor);
+            opacity: 0.5;
+          }
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+          font-weight: 500;
+          gap: .5rem;
+          color: var(--whiteColor);
+        }
+
+        .icon {
+          font-size: 18px;
+
+        }
+      }
+    }
+
+    .footercard {
+      position: relative;
+      padding: 1rem 1rem 4rem;
+      flex-direction: column;
+      border-radius: 1rem;
+      background: var(--bodyColor);
+      margin: 1rem;
+      gap: 2rem;
+      width: 100%;
+      align-items: flex-start;
+      overflow: hidden;
+      justify-content: center;
+
+      .footerintro {
+        flex-direction: column;
+        row-gap: .5rem;
+        align-items: flex-start;
+        justify-content: center;
+
+        .logoDiv {
+          .icon {
+            font-size: 18px;
+            position: relative;
+            top: 3px;
+            color: var(--PrimaryColor);
+            margin-right: 8px;
+          }
+
+          .logo {
+            font-weight: 600;
+            color: var(--blackColor);
+          }
+        }
+
+        p {
+          font-size: 13px;
+          color: var(--textColor);
+        }
+
+        .footerSocial {
+          column-gap: .5rem;
+
+          .icon {
+            font-size: 19px;
+            color: var(--blackColor);
+
+            &:hover {
+              color: var(--PrimaryColor);
+            }
+          }
+        }
+      }
+
+      .footerlink {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
+
+        .linkgroup {
+          .title {
+            font-weight: 500;
+            color: var(--blackColor);
+          }
+
+          .list {
+            color: var(--textColor);
+            font-size: 14px;
+
+            &:hover {
+              color: var(--PrimaryColor);
+              transform: translateX(7px);
+              transition: .2s ease-in-out;
+            }
+          }
+
+          .icon {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .footerdiv {
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        padding: .5rem 2rem;
+        position: absolute;
+        align-items: center;
+        background: var(--SecondaryColor);
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+
+        small {
+          font-size: 10px;
+          color: var(--whiteColor);
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width:500px) {
+  .footer {
+    .seccontent {
+      .footercard {
+        .footerlink {
+          grid-template-columns: repeat(3, 1fr);
+      
+          margin-bottom: 1.5rem;
+        }
+        .linkgroup{
+          width: max-content;
+          .title{
+            font-size: 18px;
+          }
+         
+        }
+
+       
+       
+      }
+    }
+  }
+}
+
+@media screen and (min-width:660px) {
+  .footer {
+    .seccontent {
+      .footercard{
+        .footerdiv{
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 1.3rem;
+          small{
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      .contactDiv {
+        flex-direction: row;
+        justify-content: space-between;
+       
+        
+
+        .inputDiv {
+          width: max-content;
+          flex-direction: row;
+          justify-content: flex-start;
+          input{
+            width: 60%;
+          }
+          .btn{
+            width: max-content;
+          }
+        }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width:840px){
+  .footer{
+    padding: 5rem 0;
+    .seccontent{
+      .footercard{
+        flex-direction: row;
+        .footerlink{
+          grid-template-columns: repeat(3,1fr);
+          .linkgroup{
+           
+            width: max-content;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width:1024px){
+  .footer{
+    .seccontent{
+      .footercard{
+        padding: 3rem 1rem;
+        .footerintro{
+          p{
+            font-size: 15px;
+          }
+          .logoDiv{
+            font-size: 20px;
+            .icon{
+              font-size: 20px;
+            }
+          }
+        .footerSocial{
+          column-gap: .8rem;
+          .icon{
+            font-size: 22px;
+          }
+        }
+        }
+        .footerlink{
+          .linkgroup{
+            padding: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
